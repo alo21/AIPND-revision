@@ -52,7 +52,6 @@ def isMatching(breed, ai):
 
 
     for elem in aiList:
-        print('comparing ' + elem + ' with ' + breedString)
         if breedString == elem:
             return 1
 
