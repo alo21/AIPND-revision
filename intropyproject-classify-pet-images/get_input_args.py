@@ -25,8 +25,8 @@ def get_input_args():
 
     parser = argparse.ArgumentParser(description='Use a Pre-trained Image Classifier to Identify Dog Breeds')
 
-    parser.add_argument("--dir", help='Specify images directory')
-    parser.add_argument("--arch", help='Specify the model you want to use')
-    parser.add_argument("--dogfile", help='Specify the file that contains dognames')
+    parser.add_argument("--dir", help='Specify images directory', default ='pet_images/')
+    parser.add_argument("--arch", help='Specify the model you want to use', default ='vgg')
+    parser.add_argument("--dogfile", help='Specify the file that contains dognames', default='dognames.txt')
 
     return parser.parse_args()

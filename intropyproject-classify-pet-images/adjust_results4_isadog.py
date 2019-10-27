@@ -43,10 +43,11 @@ def adjust_results4_isadog(results_dic, dogfile):
     for elem in results_dic:
         value = results_dic.get(elem)
 
-        isAdog = isInTheList(value[0], dogs)
+        isArealDog = isInTheList(value[0], dogs)
+        isClassifiedAdDod = classifiedAsDog(value, dogs)
 
-        value.append(isAdog)
-        value.append(isAdog)
+        value.append(isArealDog)
+        value.append(isClassifiedAdDod)
 
 
 def isInTheList(breed, dogs):
@@ -54,3 +55,9 @@ def isInTheList(breed, dogs):
         if breed == dog:
             return 1
     return 0
+
+
+def classifiedAsDog(guesses, dogs):
+    index = 1
+    while index < len(guesses):
+        return isInTheList(guesses[index], dogs)

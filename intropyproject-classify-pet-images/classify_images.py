@@ -34,7 +34,7 @@ def classify_images(images_dir, results_dic, model):
     for elem in results_dic:
 
         path = images_dir + elem
-        res = classifier(path, model)
+        res = classifier(path, model).lower().strip()
 
         value = results_dic.get(elem)
         match = isMatching(value, res)

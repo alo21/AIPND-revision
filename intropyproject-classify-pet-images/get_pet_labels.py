@@ -29,10 +29,10 @@ def get_pet_labels(image_dir):
     results_dic = {}
 
     for file in files:
-        formattedString = file.replace(".jpg", "").replace("_", " ").lower()
-        stringWithNoDigits = ''.join([i for i in formattedString if not i.isdigit()]).strip()
-
-        results_dic.update({file: [stringWithNoDigits]})
+        if file[0] != '.':
+            formattedString = file.replace(".jpg", "").replace("_", " ").lower()
+            stringWithNoDigits = ''.join([i for i in formattedString if not i.isdigit()]).strip()
+            results_dic.update({file: [stringWithNoDigits]})
 
     # Replace None with the results_dic dictionary that you created with this
     # function
